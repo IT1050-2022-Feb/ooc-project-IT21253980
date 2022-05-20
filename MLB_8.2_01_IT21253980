@@ -1,0 +1,78 @@
+#include<iostrem>
+#include<cstring>
+using namespace std;
+
+//admin class
+class admin
+{
+    private:
+        int adminId;
+        char adminName[30];
+        char password[20];
+		char email[30];
+    
+    public:
+        admin();
+        admin(int adminId,char adminName[],char password,char email[]);
+        void login();
+        void displayAdminDetails();
+        void managestheoffers();
+        void checksreservationdetails();
+        void updaterooms();
+};
+admin::admin(int id,char name[],char Password[],char Email[]){
+	adminId=id;
+	strcpy(adminName,name);
+	strcpy(password,Password);
+	strcpy(email,Email);
+}
+admin::displayAdminDetails(){
+	cout<<"Display Admin ID:"<<adminId<<endl;
+	cout<<"Display Admin Name:"<<dminName<<endl;
+	cout<<"Display Admin Email:"<<email<<endl;
+}
+
+//feedback class
+
+class feedback
+{
+    private:
+        int feedbackId;
+        char feedback[100];
+    
+    public:
+        feedback();
+        feedback(int fid,char fdb[]);
+        void storeFeedback();
+
+};
+feedback::feedback(int id,char fdb[]){
+	feedbackId=id;
+	strcpy(feedback,fdb);
+}
+//report class
+class report
+{
+    private:
+        int reportId;
+        char report[100];
+    
+    public:
+        report();
+        report(int rid,char report);
+        void displaypaymentreport();
+        void displayreservationreport();    
+};
+report::report(int rid,char report[]){
+	reportId=rid;
+	strcpy(report,report);
+}
+//main 
+int main(void){
+	admin *admin1= new admin(1234,'Chaith','KH@','charith@gmail.com');
+	feedback *f1 = new feedback(1,'good');
+	reprot *r1 = new report(11,'gasdgiasgid');
+	admin1->displayAdminDetails();
+	
+	return 0;
+}
